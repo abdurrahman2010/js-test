@@ -52,8 +52,3 @@ function listStudentNames() {
 
 
 
-// 5
-function addStudent() {
-    
-}
-

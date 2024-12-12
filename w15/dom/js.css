@@ -1,0 +1,14 @@
+#box {
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+    text-align: center;
+    line-height: 200px;
+    margin: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  
