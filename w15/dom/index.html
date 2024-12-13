@@ -35,7 +35,7 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,5 +49,268 @@
 <button id="widenButton">Ұзарту</button>
 <button id="heightenButton">Биіктігін ұзарту</button>
 
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .success {
+            color: green;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <form id="mainForm">
+        <label for="groupSelect">Топ таңдаңыз:</label>
+        <select id="groupSelect">
+            <option value="">--Таңдаңыз--</option>
+            <option value="24/2">24/2</option>
+            <option value="24/4">24/4</option>
+            <option value="24/6">24/6</option>
+        </select>
+        <br><br>
+
+        <label for="comment">Пікір жазыңыз:</label>
+        <textarea id="comment" rows="4" cols="30"></textarea>
+        <p id="commentMessage" class="error"></p>
+        <br>
+
+        <label for="rating">Бағалау:</label>
+        <input type="range" id="rating" min="1" max="10" value="5">
+        <span id="ratingValue">5</span>
+        <br><br>
+
+        <button type="submit">Жіберу</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Топ таңдау
+            const groupSelect = document.getElementById("groupSelect");
+            groupSelect.addEventListener("change", () => {
+                console.log("Таңдалған топ:", groupSelect.value);
+            });
+
+            // Пікір тексеру
+            const commentField = document.getElementById("comment");
+            const commentMessage = document.getElementById("commentMessage");
+
+            commentField.addEventListener("input", () => {
+                commentMessage.textContent = "";
+            });
+
+            // Бағалау көрсету
+            const ratingInput = document.getElementById("rating");
+            const ratingValue = document.getElementById("ratingValue");
+
+            ratingInput.addEventListener("input", () => {
+                ratingValue.textContent = ratingInput.value;
+            });
+
+            // Форма жіберу
+            const form = document.getElementById("mainForm");
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault(); // Форма жіберілмес үшін
+
+                // Пікір тексеру
+                const comment = commentField.value.trim();
+                if (comment.length > 15) {
+                    commentMessage.textContent = "Пікір 15 символдан аспауы керек!";
+                    return;
+                } else if (comment.length === 0) {
+                    commentMessage.textContent = "Пікір енгізу қажет!";
+                    return;
+                }
+
+                commentMessage.textContent = "Пікір қабылданды!";
+                commentMessage.classList.remove("error");
+                commentMessage.classList.add("success");
+
+                // Тексеру аяқталғаннан кейін барлық мәліметтерді шығару
+                console.log("Таңдалған топ:", groupSelect.value);
+                console.log("Пікір:", comment);
+                console.log("Бағалау:", ratingInput.value);
+
+                alert("Форма сәтті жіберілді!");
+            });
+        });
+    </script>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        select, textarea, input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        .success {
+            color: green;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        #ratingValue {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <form id="mainForm">
+        <label for="groupSelect">Топ таңдаңыз:</label>
+        <select id="groupSelect">
+            <option value="">--Таңдаңыз--</option>
+            <option value="24/2">24/2</option>
+            <option value="24/4">24/4</option>
+            <option value="24/6">24/6</option>
+        </select>
+        <br><br>
+
+        <label for="comment">Пікір жазыңыз:</label>
+        <textarea id="comment" rows="4" cols="30"></textarea>
+        <p id="commentMessage" class="error"></p>
+        <br>
+
+        <label for="rating">Бағалау:</label>
+        <input type="range" id="rating" min="1" max="10" value="5">
+        <span id="ratingValue">5</span>
+        <br><br>
+
+        <button type="submit">Жіберу</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Топ таңдау
+            const groupSelect = document.getElementById("groupSelect");
+            groupSelect.addEventListener("change", () => {
+                console.log("Таңдалған топ:", groupSelect.value);
+            });
+
+            // Пікір тексеру
+            const commentField = document.getElementById("comment");
+            const commentMessage = document.getElementById("commentMessage");
+
+            commentField.addEventListener("input", () => {
+                commentMessage.textContent = "";
+            });
+
+            // Бағалау көрсету
+            const ratingInput = document.getElementById("rating");
+            const ratingValue = document.getElementById("ratingValue");
+
+            ratingInput.addEventListener("input", () => {
+                ratingValue.textContent = ratingInput.value;
+            });
+
+            // Форма жіберу
+            const form = document.getElementById("mainForm");
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault(); // Форма жіберілмес үшін
+
+                // Пікір тексеру
+                const comment = commentField.value.trim();
+                if (comment.length > 15) {
+                    commentMessage.textContent = "Пікір 15 символдан аспауы керек!";
+                    return;
+                } else if (comment.length === 0) {
+                    commentMessage.textContent = "Пікір енгізу қажет!";
+                    return;
+                }
+
+                commentMessage.textContent = "Пікір қабылданды!";
+                commentMessage.classList.remove("error");
+                commentMessage.classList.add("success");
+
+                // Тексеру аяқталғаннан кейін барлық мәліметтерді шығару
+                console.log("Таңдалған топ:", groupSelect.value);
+                console.log("Пікір:", comment);
+                console.log("Бағалау:", ratingInput.value);
+
+                alert("Форма сәтті жіберілді!");
+            });
+        });
+    </script>
 </body>
 </html>

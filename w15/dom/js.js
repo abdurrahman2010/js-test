@@ -118,3 +118,8 @@ document.getElementById('greenButton').onclick = function() {
   // Бастапқы мәтін
   document.getElementById('box').textContent = 'Өзгеріс көру үшін мышкаңызды қорапқа алып келіңіз';
   
+
+
+
+
+  
