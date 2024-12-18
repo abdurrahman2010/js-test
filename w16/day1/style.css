@@ -1,0 +1,43 @@
+/* body {
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.cards {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.cards > div {
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s;
+    
+}
+
+.cards > div:hover {
+    transform: scale(1.05);
+}
+
+
+img {
+    height: 200px;
+    object-fit: cover;
+    width: 200px;
+}
+.card{
+    
+    background-color:white;
+    box-shadow: 0 2px 4px 0 black
+}
+ */
+
+ img{
+    width: 500px;
+ }
